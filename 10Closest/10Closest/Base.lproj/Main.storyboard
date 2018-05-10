@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_0Closest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sbe-Ly-aSd">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            </mapView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="eB1-SH-NMM">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="search"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eB1-SH-NMM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="25s-gM-1jr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sbe-Ly-aSd" secondAttribute="bottom" id="N1v-6x-M2U"/>
+                            <constraint firstItem="sbe-Ly-aSd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ugq-g2-5qb"/>
+                            <constraint firstItem="eB1-SH-NMM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="V8M-y2-bxS"/>
+                            <constraint firstItem="eB1-SH-NMM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hJf-t6-gyV"/>
+                            <constraint firstItem="sbe-Ly-aSd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mHT-ae-KaU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sbe-Ly-aSd" secondAttribute="trailing" id="xKU-1w-Vbu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="Yn4-rk-ILx" id="qTQ-te-Rkq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Yn4-rk-ILx">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="aQx-Ll-rQS"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="7qz-p7-xnd"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="jaX-ym-sSg"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="6sa-cA-deg"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+        </scene>
+    </scenes>
+</document>
