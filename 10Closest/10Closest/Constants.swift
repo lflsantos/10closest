@@ -9,9 +9,10 @@
 import Foundation
 
 struct Constants {
-    /** INSERIR API KEY **/
+    /** API KEY **/
     static let GOOGLE_API_KEY = "AIzaSyCjV1x-ozxhmAF5-naoaBRj6nuw5DEN9VA"
     /**************/
     static let NEARBYSEARCH_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=%@&radius=%@&keyword=%@&language=%@&rankby=distance&type=%@&key%@"
+    static let MAXRADIUS = 50000
     
 }
