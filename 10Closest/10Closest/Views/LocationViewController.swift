@@ -14,6 +14,8 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UISea
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var settingsButton: UIButton!
     
     var locationManager: CLLocationManager!
     private let presenter = LocationPresenter()
@@ -27,35 +29,62 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UISea
         locationManager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
         
         mapView.delegate = self
-        
         searchBar.delegate = self
         
+        presenter.attachView(self)
+        
     }
+    
+    // MARK: - Button Actions
+    @IBAction func touchSettings(_ sender: UIButton) {
+    }
+    
+    @IBAction func touchMyLocation(_ sender: Any) {
+        centerOnUserLocation()
+    }
+    
 
     
     // MARK: - Location Protocol Implementation
     func startLoading() {
-        
+        indicatorView.startAnimating()
+        settingsButton.isHidden = true
     }
     
     func finishLoading() {
-        
+        indicatorView.stopAnimating()
+        settingsButton.isHidden = false
     }
     
-    func setLocations(/*_ locations: [LocationModel]*/) {
-//        let annotation = MKPointAnnotation()
-//        annotation.coordinate = CLLocationCoordinate2D(latitude: -23.314974, longitude: -45.975469)
-//        mapView.addAnnotation(annotation)
+    func setLocations(_ locations: [LocationModel]) {
+        cleanLocations(centeringOnUser: false)
+        var annotations = [MKAnnotation]()
+        for location in locations {
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(location.geometry.location.lat), longitude: CLLocationDegrees(location.geometry.location.lng))
+            annotations.append(annotation)
+        }
+        mapView.addAnnotations(annotations)
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
-    func cleanLocations() {
-        
+    func cleanLocations(centeringOnUser: Bool) {
+        mapView.removeAnnotations(mapView.annotations)
+        if(centeringOnUser) {
+            centerOnUserLocation()
+        }
     }
     
     // MARK: - SearchBar Delegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if let text = searchBar.text, let coordinates =  locationManager.location?.coordinate{
+        if let text = searchBar.text, text != "", let coordinates =  locationManager.location?.coordinate{
             presenter.requestLocations(text, coordinates: coordinates)
+        }
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            cleanLocations(centeringOnUser: true)
         }
     }
     
@@ -64,10 +93,10 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UISea
         if annotation is MKUserLocation{
             return nil
         } else {
-            if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "teste"){
+            if let annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "annotationIdentifier"){
                 return annotationView
             }else{
-                let teste = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "teste")
+                let teste = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "annotationIdentifier")
                 teste.displayPriority = .required
                 return teste
             }

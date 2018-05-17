@@ -13,15 +13,14 @@ import CoreLocation
 class LocationSearchService {
     
     
-    func searchLocations(request: LocationRequestModel){
-//        let urlString = String(stringInterpolation: Constants.NEARBYSEARCH_URL, request.location.toString(), String(request.radius), request.keyword.replaceSpacesWithPlusChar(), "pt-BR", "", Constants.GOOGLE_API_KEY)
+    func searchLocations(request: LocationRequestModel, callBack: @escaping ([LocationModel]) -> Void){
 
         let urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(request.location)&keyword=\(request.keyword.replaceSpacesWithPlusChar())&language=pt-BR&rankby=distance&key=\(Constants.GOOGLE_API_KEY)"
         let url = URL(string: urlString)
         
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
             if let locations = self.parseJSON(data: data!) {
-                print(locations)
+                callBack(locations.results)
             } else {
                 print("ERROR. Could not fetch JSON from URL")
             }

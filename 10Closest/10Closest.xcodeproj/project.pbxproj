@@ -18,6 +18,7 @@
 		76A67A7120A3DED9009E21C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A67A7020A3DED9009E21C2 /* Assets.xcassets */; };
 		76A67A7420A3DED9009E21C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A67A7220A3DED9009E21C2 /* LaunchScreen.storyboard */; };
 		76A67A9820A3FCBE009E21C2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A67A9720A3FCBE009E21C2 /* Constants.swift */; };
+		76E04C9420AD17D6000D194A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A67A6B20A3DED7009E21C2 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E04C9420AD17D6000D194A /* LocationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,6 +11,5 @@ import Foundation
 protocol LocationViewProtocol : class{
     func startLoading()
     func finishLoading()
-    func setLocations(/*_ locationModels:[LocationModel]*/)
-    func cleanLocations()
+    func setLocations(_ locationModels:[LocationModel])
 }

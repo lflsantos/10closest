@@ -11,7 +11,7 @@ import CoreLocation
 
 struct LocationModel : Decodable{
     let name : String
-    let location : String
+    let geometry : Geometry
     let icon : URL?
     let open : Bool?
     let types : [String]?
@@ -20,8 +20,15 @@ struct LocationModel : Decodable{
     let formatted_address : String?
     let rating : Float?
     let permanently_closed : Bool?
-    
-    //custom decoder to exclude unwanted fields
+}
+
+struct Geometry : Decodable{
+    let location : LocationCoordinates
+}
+
+struct LocationCoordinates : Decodable {
+    let lat: Float
+    let lng: Float
 }
 
 struct LocationsModel : Decodable{
@@ -51,8 +58,6 @@ struct LocationRequestModel {
     let rankBy = "distance"
     let type : String?
 }
-
-
 
 enum PriceLevel : Int{
     case Free = 0

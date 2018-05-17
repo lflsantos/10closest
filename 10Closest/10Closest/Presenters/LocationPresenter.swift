@@ -15,6 +15,8 @@ class LocationPresenter : NSObject, CLLocationManagerDelegate{
     private let locationService: LocationSearchService
     var locManager: CLLocationManager!
     
+    var locations = [LocationModel]()
+    
     override init() {
         locationService = LocationSearchService()
         
@@ -25,18 +27,17 @@ class LocationPresenter : NSObject, CLLocationManagerDelegate{
     }
     
     func requestLocations(_ keywords: String, coordinates: CLLocationCoordinate2D){
+        self.locationView.startLoading()
         let requestModel = LocationRequestModel(keyword: keywords, location: coordinates.toString(), radius: Constants.MAXRADIUS, language: "pt-BR", type: nil)
-        locationService.searchLocations(request: requestModel)
+        locationService.searchLocations(request: requestModel, callBack: { (locations) -> Void in
+            self.locations = locations
+            DispatchQueue.main.async {
+                let maxRange = locations.count >= 10 ? 10 : locations.count
+                self.locationView.setLocations(Array(locations[0..<maxRange]))
+                self.locationView.finishLoading()
+            }
+        })
     }
-    
-    func receivedLocations(){
-        
-    }
-    
-    func errorReceivingLocations(){
-        
-    }
-
 }
 
 extension CLLocationCoordinate2D {
