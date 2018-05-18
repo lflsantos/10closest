@@ -17,8 +17,11 @@ class LocationViewController: UIViewController{
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     @IBOutlet weak var detailView: DetailView!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var detailConstraint: NSLayoutConstraint!
     
     var locationManager: CLLocationManager!
+    var selectedAnnotation: MKAnnotation?
+    var switching = 0
     private let presenter = LocationPresenter(service: LocationService())
     private var locations = [LocationModel]()
 
@@ -33,6 +36,8 @@ class LocationViewController: UIViewController{
         mapView.delegate = self
         searchBar.delegate = self
         
+        mapView.frame.size.height = 0
+        
         presenter.attachView(self)
     }
     
@@ -46,8 +51,23 @@ class LocationViewController: UIViewController{
     
     func cleanLocations(centeringOnUser: Bool) {
         mapView.removeAnnotations(mapView.annotations)
+        hideDetail()
         if(centeringOnUser) {
             centerOnUserLocation()
+        }
+    }
+    
+    func hideDetail(){
+        UIView.animate(withDuration: 1){
+            self.detailConstraint.constant = 0;
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func showDetail(){
+        UIView.animate(withDuration: 1){
+            self.detailConstraint.constant = 150;
+            self.view.layoutIfNeeded()
         }
     }
 }
@@ -67,11 +87,13 @@ extension LocationViewController : LocationViewProtocol {
     }
     
     func setLocations(_ locations: [LocationModel]) {
+        self.locations = locations
         cleanLocations(centeringOnUser: false)
         var annotations = [MKAnnotation]()
         for location in locations {
             let annotation = MKPointAnnotation()
             annotation.coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(location.geometry.location.lat), longitude: CLLocationDegrees(location.geometry.location.lng))
+            annotation.title = location.name
             annotations.append(annotation)
         }
         mapView.addAnnotations(annotations)
@@ -141,24 +163,47 @@ extension LocationViewController : CLLocationManagerDelegate, MKMapViewDelegate 
                 return annotationView
             }else{
                 let teste = MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: "annotationIdentifier")
-                teste.displayPriority = .required
                 return teste
             }
         }
     }
     
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-//        detailView.locationModel = locations.first(where: {$0.id == view.annotation})
+        if (view.annotation is MKUserLocation /*|| selectedAnnotation?.title == view.annotation?.title*/){
+            selectedAnnotation = nil
+            return
+        }
+        selectedAnnotation = view.annotation
+        switching += 1
+        
+        let location = locations.first(where: {$0.name == selectedAnnotation?.title})
+        detailView.locationModel = location
+        
+        if let coordinate = view.annotation?.coordinate{
+            UIView.animate(withDuration: 1){
+                self.centerOnLocation(coordinate)
+                self.detailConstraint.constant = 150;
+                self.view.layoutIfNeeded()
+            }
+        }
     }
-    
+
     func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        <#code#>
+        switching -= 1
+        if (switching == 2){
+            return
+        }
+        hideDetail()
     }
     
     func centerOnUserLocation(){
         if let coordinates = locationManager.location?.coordinate {
             mapView.setRegion(MKCoordinateRegionMakeWithDistance(coordinates, 200, 200), animated: true)
         }
+    }
+    
+    func centerOnLocation(_ location: CLLocationCoordinate2D){
+        mapView.setRegion(MKCoordinateRegionMakeWithDistance(location, 200, 200), animated: true)
     }
 }
 

@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailView" customModule="TenClosest" customModuleProvider="target">
             <connections>
                 <outlet property="adressLabel" destination="5s4-Jx-xJR" id="Qnu-ia-PaT"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="BLI-RZ-jkc"/>
                 <outlet property="locationImage" destination="A0H-s4-9iK" id="9hy-he-5Au"/>
                 <outlet property="nameLabel" destination="8K7-Co-bmz" id="cv1-cL-pYJ"/>
                 <outlet property="openLabel" destination="uUf-jF-j8X" id="n0c-7G-ccs"/>
@@ -32,13 +33,13 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8K7-Co-bmz">
-                    <rect key="frame" x="165" y="10" width="50.5" height="21.5"/>
+                    <rect key="frame" x="165" y="10" width="195" height="21.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adress" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5s4-Jx-xJR">
-                    <rect key="frame" x="165" y="36.5" width="50" height="19.5"/>
+                    <rect key="frame" x="165" y="36.5" width="195" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
@@ -87,6 +88,7 @@
                 <constraint firstItem="kcw-G9-2hc" firstAttribute="centerY" secondItem="sS9-WF-XfB" secondAttribute="centerY" id="710-6r-I6g"/>
                 <constraint firstItem="5s4-Jx-xJR" firstAttribute="leading" secondItem="8K7-Co-bmz" secondAttribute="leading" id="7VG-HY-m63"/>
                 <constraint firstItem="gad-Gy-nzY" firstAttribute="leading" secondItem="JDc-In-wd5" secondAttribute="trailing" constant="5" id="9Ek-WH-bYA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="5s4-Jx-xJR" secondAttribute="trailing" constant="15" id="FQQ-YL-nvW"/>
                 <constraint firstItem="uUf-jF-j8X" firstAttribute="leading" secondItem="uPp-Fb-rlm" secondAttribute="trailing" constant="5" id="IZb-Tt-GoG"/>
                 <constraint firstItem="A0H-s4-9iK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="M6g-Sz-q1t"/>
                 <constraint firstItem="A0H-s4-9iK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="R4h-JP-q0W"/>
@@ -97,6 +99,7 @@
                 <constraint firstItem="uPp-Fb-rlm" firstAttribute="top" secondItem="5s4-Jx-xJR" secondAttribute="bottom" constant="5" id="k6y-Tn-QiA"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="A0H-s4-9iK" secondAttribute="bottom" id="kjf-h0-Zza"/>
                 <constraint firstItem="gad-Gy-nzY" firstAttribute="centerY" secondItem="JDc-In-wd5" secondAttribute="centerY" id="mu9-Yy-45A"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8K7-Co-bmz" secondAttribute="trailing" constant="15" id="oU2-1Z-wFw"/>
                 <constraint firstItem="JDc-In-wd5" firstAttribute="leading" secondItem="sS9-WF-XfB" secondAttribute="leading" id="q38-zq-LLO"/>
                 <constraint firstItem="JDc-In-wd5" firstAttribute="top" secondItem="sS9-WF-XfB" secondAttribute="bottom" constant="5" id="rba-1U-vGO"/>
                 <constraint firstItem="sS9-WF-XfB" firstAttribute="leading" secondItem="uPp-Fb-rlm" secondAttribute="leading" id="sXZ-o3-Jib"/>
