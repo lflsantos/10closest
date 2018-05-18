@@ -10,15 +10,17 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LocationViewController: UIViewController, CLLocationManagerDelegate, UISearchBarDelegate, LocationViewProtocol, MKMapViewDelegate{
+class LocationViewController: UIViewController{
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    @IBOutlet weak var detailView: DetailView!
     @IBOutlet weak var settingsButton: UIButton!
     
     var locationManager: CLLocationManager!
-    private let presenter = LocationPresenter()
+    private let presenter = LocationPresenter(service: LocationService())
+    private var locations = [LocationModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,6 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UISea
         searchBar.delegate = self
         
         presenter.attachView(self)
-        
     }
     
     // MARK: - Button Actions
@@ -43,17 +44,26 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UISea
         centerOnUserLocation()
     }
     
+    func cleanLocations(centeringOnUser: Bool) {
+        mapView.removeAnnotations(mapView.annotations)
+        if(centeringOnUser) {
+            centerOnUserLocation()
+        }
+    }
+}
 
-    
-    // MARK: - Location Protocol Implementation
+// MARK: - Location Protocol Implementation
+extension LocationViewController : LocationViewProtocol {
     func startLoading() {
         indicatorView.startAnimating()
         settingsButton.isHidden = true
+        searchBar.isUserInteractionEnabled = false
     }
     
     func finishLoading() {
         indicatorView.stopAnimating()
         settingsButton.isHidden = false
+        searchBar.isUserInteractionEnabled = true
     }
     
     func setLocations(_ locations: [LocationModel]) {
@@ -68,14 +78,25 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UISea
         mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
-    func cleanLocations(centeringOnUser: Bool) {
-        mapView.removeAnnotations(mapView.annotations)
-        if(centeringOnUser) {
-            centerOnUserLocation()
-        }
+    func noLocationFound() {
+        showAlert(message: "Nenhum local encontrado", blocking: false)
     }
     
-    // MARK: - SearchBar Delegate
+    func onErrorFindingLocations() {
+        showAlert(message: "Erro ao buscar locais", blocking: false)
+    }
+    
+    func showAlert(message: String, blocking: Bool){
+        let alertController = UIAlertController(title: "Atenção", message: message, preferredStyle: .alert)
+        if(!blocking){
+            alertController.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        }
+        self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - SearchBar Delegate
+extension LocationViewController : UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if let text = searchBar.text, text != "", let coordinates =  locationManager.location?.coordinate{
             presenter.requestLocations(text, coordinates: coordinates)
@@ -85,6 +106,29 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UISea
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText == "" {
             cleanLocations(centeringOnUser: true)
+        }
+    }
+}
+
+
+extension LocationViewController : CLLocationManagerDelegate, MKMapViewDelegate {
+    // MARK: - Location Manager Delegate
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+        case .authorizedWhenInUse:
+            manager.startUpdatingLocation()
+            centerOnUserLocation()
+        case .authorizedAlways:
+            manager.startUpdatingLocation()
+            centerOnUserLocation()
+        case .restricted:
+            showAlert(message: "Desabilite a restrição de localização para que este app funcione corretamente", blocking: true)
+            break
+        case .denied:
+            showAlert(message: "Este app necessita autorização do uso de sua localização para seu funcionamento", blocking: true)
+            break
         }
     }
     
@@ -103,31 +147,18 @@ class LocationViewController: UIViewController, CLLocationManagerDelegate, UISea
         }
     }
     
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+//        detailView.locationModel = locations.first(where: {$0.id == view.annotation})
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        <#code#>
+    }
+    
     func centerOnUserLocation(){
         if let coordinates = locationManager.location?.coordinate {
             mapView.setRegion(MKCoordinateRegionMakeWithDistance(coordinates, 200, 200), animated: true)
         }
     }
-    
-    // MARK: - Location Manager Delegate
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .notDetermined:
-            manager.requestWhenInUseAuthorization()
-        case .authorizedWhenInUse:
-            manager.startUpdatingLocation()
-            centerOnUserLocation()
-        case .authorizedAlways:
-            manager.startUpdatingLocation()
-            centerOnUserLocation()
-        case .restricted:
-            break
-        case .denied:
-            break
-        }
-    }
-    
-
-
 }
 

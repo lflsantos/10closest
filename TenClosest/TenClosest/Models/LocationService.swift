@@ -10,19 +10,18 @@ import Foundation
 import CoreLocation
 
 
-class LocationSearchService {
+class LocationService : LocationServiceProtocol {
     
-    
-    func searchLocations(request: LocationRequestModel, callBack: @escaping ([LocationModel]) -> Void){
+    func searchLocations(request: LocationRequestModel, callBack: @escaping ([LocationModel], Int) -> Void){
 
         let urlString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(request.location)&keyword=\(request.keyword.replaceSpacesWithPlusChar())&language=pt-BR&rankby=distance&key=\(Constants.GOOGLE_API_KEY)"
         let url = URL(string: urlString)
         
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
             if let locations = self.parseJSON(data: data!) {
-                callBack(locations.results)
+                callBack(locations.results, 200)
             } else {
-                print("ERROR. Could not fetch JSON from URL")
+                callBack([LocationModel](), -1)
             }
         }
         
@@ -38,8 +37,6 @@ class LocationSearchService {
         }
     }
 }
-
-
 
 extension String {
     func replaceSpacesWithPlusChar() -> String{

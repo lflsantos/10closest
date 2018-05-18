@@ -10,6 +10,7 @@ import Foundation
 import CoreLocation
 
 struct LocationModel : Decodable{
+    let id : String
     let name : String
     let geometry : Geometry
     let icon : URL?

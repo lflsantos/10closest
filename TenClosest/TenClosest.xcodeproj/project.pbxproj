@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7685EEC020AED83F009D19ED /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7685EEBF20AED83F009D19ED /* DetailView.swift */; };
+		7685EEC220AED84E009D19ED /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7685EEC120AED84E009D19ED /* DetailView.xib */; };
 		7691C69C20A91A74006A0812 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C69B20A91A74006A0812 /* APIManager.swift */; };
 		7691C69E20A91AAB006A0812 /* LocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C69D20A91AAB006A0812 /* LocationPresenter.swift */; };
-		7691C6A120A91C86006A0812 /* LocationViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C6A020A91C86006A0812 /* LocationViewProtocol.swift */; };
-		7691C6A420A91CF4006A0812 /* LocationSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C6A320A91CF4006A0812 /* LocationSearchService.swift */; };
+		7691C6A120A91C86006A0812 /* LocationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C6A020A91C86006A0812 /* LocationProtocols.swift */; };
+		7691C6A420A91CF4006A0812 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C6A320A91CF4006A0812 /* LocationService.swift */; };
 		7691C6A620A91D0F006A0812 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C6A520A91D0F006A0812 /* LocationModel.swift */; };
 		76A67A6A20A3DED7009E21C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A67A6920A3DED7009E21C2 /* AppDelegate.swift */; };
 		76A67A6C20A3DED7009E21C2 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A67A6B20A3DED7009E21C2 /* LocationViewController.swift */; };
@@ -18,18 +20,11 @@
 		76A67A7120A3DED9009E21C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76A67A7020A3DED9009E21C2 /* Assets.xcassets */; };
 		76A67A7420A3DED9009E21C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A67A7220A3DED9009E21C2 /* LaunchScreen.storyboard */; };
 		76A67A9820A3FCBE009E21C2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A67A9720A3FCBE009E21C2 /* Constants.swift */; };
-		76E04C9420AD17D6000D194A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A67A6B20A3DED7009E21C2 /* LocationViewController.swift */; };
+		76DC851320AEAE4E00522756 /* LocationPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DC851220AEAE4E00522756 /* LocationPresenterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		76A67A7B20A3DED9009E21C2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 76A67A5E20A3DED7009E21C2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 76A67A6520A3DED7009E21C2;
-			remoteInfo = 10Closest;
-		};
-		76A67A8620A3DED9009E21C2 /* PBXContainerItemProxy */ = {
+		76DC850D20AEABCB00522756 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 76A67A5E20A3DED7009E21C2 /* Project object */;
 			proxyType = 1;
@@ -39,21 +34,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7685EEBF20AED83F009D19ED /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		7685EEC120AED84E009D19ED /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
 		7691C69B20A91A74006A0812 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		7691C69D20A91AAB006A0812 /* LocationPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPresenter.swift; sourceTree = "<group>"; };
-		7691C6A020A91C86006A0812 /* LocationViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewProtocol.swift; sourceTree = "<group>"; };
-		7691C6A320A91CF4006A0812 /* LocationSearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchService.swift; sourceTree = "<group>"; };
+		7691C6A020A91C86006A0812 /* LocationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProtocols.swift; sourceTree = "<group>"; };
+		7691C6A320A91CF4006A0812 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		7691C6A520A91D0F006A0812 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
-		76A67A6620A3DED7009E21C2 /* 10Closest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 10Closest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		76A67A6620A3DED7009E21C2 /* TenClosest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenClosest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A67A6920A3DED7009E21C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76A67A6B20A3DED7009E21C2 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		76A67A6E20A3DED7009E21C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		76A67A7020A3DED9009E21C2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76A67A7320A3DED9009E21C2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76A67A7520A3DED9009E21C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		76A67A7A20A3DED9009E21C2 /* 10ClosestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 10ClosestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		76A67A8520A3DED9009E21C2 /* 10ClosestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 10ClosestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A67A9720A3FCBE009E21C2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		76DC850820AEABCB00522756 /* TenClosestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TenClosestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		76DC850C20AEABCB00522756 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76DC851220AEAE4E00522756 /* LocationPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPresenterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,14 +62,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76A67A7720A3DED9009E21C2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76A67A8220A3DED9009E21C2 /* Frameworks */ = {
+		76DC850520AEABCB00522756 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -92,7 +83,7 @@
 		7691C69F20A91B67006A0812 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				7691C6A020A91C86006A0812 /* LocationViewProtocol.swift */,
+				7691C6A020A91C86006A0812 /* LocationProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -100,7 +91,7 @@
 		7691C6A220A91CA2006A0812 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7691C6A320A91CF4006A0812 /* LocationSearchService.swift */,
+				7691C6A320A91CF4006A0812 /* LocationService.swift */,
 				7691C6A520A91D0F006A0812 /* LocationModel.swift */,
 			);
 			path = Models;
@@ -109,7 +100,10 @@
 		7691C6A720A91F42006A0812 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				76A67A6D20A3DED7009E21C2 /* Main.storyboard */,
 				76A67A6B20A3DED7009E21C2 /* LocationViewController.swift */,
+				7685EEBF20AED83F009D19ED /* DetailView.swift */,
+				7685EEC120AED84E009D19ED /* DetailView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,7 +120,8 @@
 		76A67A5D20A3DED7009E21C2 = {
 			isa = PBXGroup;
 			children = (
-				76A67A6820A3DED7009E21C2 /* 10Closest */,
+				76A67A6820A3DED7009E21C2 /* TenClosest */,
+				76DC850920AEABCB00522756 /* TenClosestTests */,
 				76A67A6720A3DED7009E21C2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -134,14 +129,13 @@
 		76A67A6720A3DED7009E21C2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				76A67A6620A3DED7009E21C2 /* 10Closest.app */,
-				76A67A7A20A3DED9009E21C2 /* 10ClosestTests.xctest */,
-				76A67A8520A3DED9009E21C2 /* 10ClosestUITests.xctest */,
+				76A67A6620A3DED7009E21C2 /* TenClosest.app */,
+				76DC850820AEABCB00522756 /* TenClosestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		76A67A6820A3DED7009E21C2 /* 10Closest */ = {
+		76A67A6820A3DED7009E21C2 /* TenClosest */ = {
 			isa = PBXGroup;
 			children = (
 				7691C6A820A922B4006A0812 /* Resources */,
@@ -150,20 +144,28 @@
 				7691C6A720A91F42006A0812 /* Views */,
 				7691C69F20A91B67006A0812 /* Protocols */,
 				76A67A6920A3DED7009E21C2 /* AppDelegate.swift */,
-				76A67A6D20A3DED7009E21C2 /* Main.storyboard */,
 				76A67A7520A3DED9009E21C2 /* Info.plist */,
 				76A67A9720A3FCBE009E21C2 /* Constants.swift */,
 				7691C69B20A91A74006A0812 /* APIManager.swift */,
 			);
-			path = 10Closest;
+			path = TenClosest;
+			sourceTree = "<group>";
+		};
+		76DC850920AEABCB00522756 /* TenClosestTests */ = {
+			isa = PBXGroup;
+			children = (
+				76DC851220AEAE4E00522756 /* LocationPresenterTest.swift */,
+				76DC850C20AEABCB00522756 /* Info.plist */,
+			);
+			path = TenClosestTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		76A67A6520A3DED7009E21C2 /* 10Closest */ = {
+		76A67A6520A3DED7009E21C2 /* TenClosest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 76A67A8E20A3DED9009E21C2 /* Build configuration list for PBXNativeTarget "10Closest" */;
+			buildConfigurationList = 76A67A8E20A3DED9009E21C2 /* Build configuration list for PBXNativeTarget "TenClosest" */;
 			buildPhases = (
 				76A67A6220A3DED7009E21C2 /* Sources */,
 				76A67A6320A3DED7009E21C2 /* Frameworks */,
@@ -173,46 +175,28 @@
 			);
 			dependencies = (
 			);
-			name = 10Closest;
+			name = TenClosest;
 			productName = 10Closest;
-			productReference = 76A67A6620A3DED7009E21C2 /* 10Closest.app */;
+			productReference = 76A67A6620A3DED7009E21C2 /* TenClosest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		76A67A7920A3DED9009E21C2 /* 10ClosestTests */ = {
+		76DC850720AEABCB00522756 /* TenClosestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 76A67A9120A3DED9009E21C2 /* Build configuration list for PBXNativeTarget "10ClosestTests" */;
+			buildConfigurationList = 76DC850F20AEABCB00522756 /* Build configuration list for PBXNativeTarget "TenClosestTests" */;
 			buildPhases = (
-				76A67A7620A3DED9009E21C2 /* Sources */,
-				76A67A7720A3DED9009E21C2 /* Frameworks */,
-				76A67A7820A3DED9009E21C2 /* Resources */,
+				76DC850420AEABCB00522756 /* Sources */,
+				76DC850520AEABCB00522756 /* Frameworks */,
+				76DC850620AEABCB00522756 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				76A67A7C20A3DED9009E21C2 /* PBXTargetDependency */,
+				76DC850E20AEABCB00522756 /* PBXTargetDependency */,
 			);
-			name = 10ClosestTests;
+			name = TenClosestTests;
 			productName = 10ClosestTests;
-			productReference = 76A67A7A20A3DED9009E21C2 /* 10ClosestTests.xctest */;
+			productReference = 76DC850820AEABCB00522756 /* TenClosestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		76A67A8420A3DED9009E21C2 /* 10ClosestUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 76A67A9420A3DED9009E21C2 /* Build configuration list for PBXNativeTarget "10ClosestUITests" */;
-			buildPhases = (
-				76A67A8120A3DED9009E21C2 /* Sources */,
-				76A67A8220A3DED9009E21C2 /* Frameworks */,
-				76A67A8320A3DED9009E21C2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				76A67A8720A3DED9009E21C2 /* PBXTargetDependency */,
-			);
-			name = 10ClosestUITests;
-			productName = 10ClosestUITests;
-			productReference = 76A67A8520A3DED9009E21C2 /* 10ClosestUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -227,17 +211,13 @@
 					76A67A6520A3DED7009E21C2 = {
 						CreatedOnToolsVersion = 9.3;
 					};
-					76A67A7920A3DED9009E21C2 = {
-						CreatedOnToolsVersion = 9.3;
-						TestTargetID = 76A67A6520A3DED7009E21C2;
-					};
-					76A67A8420A3DED9009E21C2 = {
-						CreatedOnToolsVersion = 9.3;
+					76DC850720AEABCB00522756 = {
+						CreatedOnToolsVersion = 9.3.1;
 						TestTargetID = 76A67A6520A3DED7009E21C2;
 					};
 				};
 			};
-			buildConfigurationList = 76A67A6120A3DED7009E21C2 /* Build configuration list for PBXProject "10Closest" */;
+			buildConfigurationList = 76A67A6120A3DED7009E21C2 /* Build configuration list for PBXProject "TenClosest" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -250,9 +230,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				76A67A6520A3DED7009E21C2 /* 10Closest */,
-				76A67A7920A3DED9009E21C2 /* 10ClosestTests */,
-				76A67A8420A3DED9009E21C2 /* 10ClosestUITests */,
+				76A67A6520A3DED7009E21C2 /* TenClosest */,
+				76DC850720AEABCB00522756 /* TenClosestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -263,19 +242,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				76A67A7420A3DED9009E21C2 /* LaunchScreen.storyboard in Resources */,
+				7685EEC220AED84E009D19ED /* DetailView.xib in Resources */,
 				76A67A7120A3DED9009E21C2 /* Assets.xcassets in Resources */,
 				76A67A6F20A3DED7009E21C2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76A67A7820A3DED9009E21C2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76A67A8320A3DED9009E21C2 /* Resources */ = {
+		76DC850620AEABCB00522756 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,43 +263,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				7691C6A620A91D0F006A0812 /* LocationModel.swift in Sources */,
-				7691C6A420A91CF4006A0812 /* LocationSearchService.swift in Sources */,
+				7685EEC020AED83F009D19ED /* DetailView.swift in Sources */,
+				7691C6A420A91CF4006A0812 /* LocationService.swift in Sources */,
 				7691C69C20A91A74006A0812 /* APIManager.swift in Sources */,
 				76A67A6C20A3DED7009E21C2 /* LocationViewController.swift in Sources */,
 				7691C69E20A91AAB006A0812 /* LocationPresenter.swift in Sources */,
 				76A67A6A20A3DED7009E21C2 /* AppDelegate.swift in Sources */,
-				7691C6A120A91C86006A0812 /* LocationViewProtocol.swift in Sources */,
+				7691C6A120A91C86006A0812 /* LocationProtocols.swift in Sources */,
 				76A67A9820A3FCBE009E21C2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		76A67A7620A3DED9009E21C2 /* Sources */ = {
+		76DC850420AEABCB00522756 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		76A67A8120A3DED9009E21C2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				76E04C9420AD17D6000D194A /* LocationViewController.swift in Sources */,
+				76DC851320AEAE4E00522756 /* LocationPresenterTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		76A67A7C20A3DED9009E21C2 /* PBXTargetDependency */ = {
+		76DC850E20AEABCB00522756 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 76A67A6520A3DED7009E21C2 /* 10Closest */;
-			targetProxy = 76A67A7B20A3DED9009E21C2 /* PBXContainerItemProxy */;
-		};
-		76A67A8720A3DED9009E21C2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 76A67A6520A3DED7009E21C2 /* 10Closest */;
-			targetProxy = 76A67A8620A3DED9009E21C2 /* PBXContainerItemProxy */;
+			target = 76A67A6520A3DED7009E21C2 /* TenClosest */;
+			targetProxy = 76DC850D20AEABCB00522756 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -401,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -455,7 +417,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -469,12 +431,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = 10Closest/Info.plist;
+				INFOPLIST_FILE = TenClosest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lsantos.-0Closest";
+				PRODUCT_BUNDLE_IDENTIFIER = lsantos.TenClosest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -486,100 +448,60 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = 10Closest/Info.plist;
+				INFOPLIST_FILE = TenClosest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lsantos.-0Closest";
+				PRODUCT_BUNDLE_IDENTIFIER = lsantos.TenClosest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
-		76A67A9220A3DED9009E21C2 /* Debug */ = {
+		76DC851020AEABCB00522756 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = 10ClosestTests/Info.plist;
+				INFOPLIST_FILE = TenClosestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lsantos.-0ClosestTests";
+				PRODUCT_BUNDLE_IDENTIFIER = lsantos.TenClosestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/10Closest.app/10Closest";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TenClosest.app/TenClosest";
 			};
 			name = Debug;
 		};
-		76A67A9320A3DED9009E21C2 /* Release */ = {
+		76DC851120AEABCB00522756 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = 10ClosestTests/Info.plist;
+				INFOPLIST_FILE = TenClosestTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lsantos.-0ClosestTests";
+				PRODUCT_BUNDLE_IDENTIFIER = lsantos.TenClosestTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/10Closest.app/10Closest";
-			};
-			name = Release;
-		};
-		76A67A9520A3DED9009E21C2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = 10ClosestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lsantos.-0ClosestUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = 10Closest;
-			};
-			name = Debug;
-		};
-		76A67A9620A3DED9009E21C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = 10ClosestUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lsantos.-0ClosestUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = 10Closest;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TenClosest.app/TenClosest";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		76A67A6120A3DED7009E21C2 /* Build configuration list for PBXProject "10Closest" */ = {
+		76A67A6120A3DED7009E21C2 /* Build configuration list for PBXProject "TenClosest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76A67A8C20A3DED9009E21C2 /* Debug */,
@@ -588,7 +510,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		76A67A8E20A3DED9009E21C2 /* Build configuration list for PBXNativeTarget "10Closest" */ = {
+		76A67A8E20A3DED9009E21C2 /* Build configuration list for PBXNativeTarget "TenClosest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				76A67A8F20A3DED9009E21C2 /* Debug */,
@@ -597,20 +519,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		76A67A9120A3DED9009E21C2 /* Build configuration list for PBXNativeTarget "10ClosestTests" */ = {
+		76DC850F20AEABCB00522756 /* Build configuration list for PBXNativeTarget "TenClosestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				76A67A9220A3DED9009E21C2 /* Debug */,
-				76A67A9320A3DED9009E21C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		76A67A9420A3DED9009E21C2 /* Build configuration list for PBXNativeTarget "10ClosestUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				76A67A9520A3DED9009E21C2 /* Debug */,
-				76A67A9620A3DED9009E21C2 /* Release */,
+				76DC851020AEABCB00522756 /* Debug */,
+				76DC851120AEABCB00522756 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

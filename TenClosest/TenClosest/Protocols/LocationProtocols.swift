@@ -8,8 +8,14 @@
 
 import Foundation
 
-protocol LocationViewProtocol : class{
+protocol LocationViewProtocol : class {
     func startLoading()
     func finishLoading()
     func setLocations(_ locationModels:[LocationModel])
+    func noLocationFound();
+    func onErrorFindingLocations();
+}
+
+protocol LocationServiceProtocol {
+    func searchLocations(request: LocationRequestModel, callBack: @escaping ([LocationModel], Int) -> Void)
 }
