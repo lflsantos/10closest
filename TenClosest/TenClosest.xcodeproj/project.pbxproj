@@ -14,6 +14,9 @@
 		7691C6A120A91C86006A0812 /* LocationProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C6A020A91C86006A0812 /* LocationProtocols.swift */; };
 		7691C6A420A91CF4006A0812 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C6A320A91CF4006A0812 /* LocationService.swift */; };
 		7691C6A620A91D0F006A0812 /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7691C6A520A91D0F006A0812 /* LocationModel.swift */; };
+		76A64B0620B2195B0037C88A /* ImageLoaderPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A64B0520B2195B0037C88A /* ImageLoaderPresenter.swift */; };
+		76A64B0820B21A830037C88A /* ImageLoaderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A64B0720B21A830037C88A /* ImageLoaderService.swift */; };
+		76A64B0A20B21B000037C88A /* ImageLoaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A64B0920B21B000037C88A /* ImageLoaderProtocols.swift */; };
 		76A67A6A20A3DED7009E21C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A67A6920A3DED7009E21C2 /* AppDelegate.swift */; };
 		76A67A6C20A3DED7009E21C2 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76A67A6B20A3DED7009E21C2 /* LocationViewController.swift */; };
 		76A67A6F20A3DED7009E21C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76A67A6D20A3DED7009E21C2 /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 		7691C6A020A91C86006A0812 /* LocationProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProtocols.swift; sourceTree = "<group>"; };
 		7691C6A320A91CF4006A0812 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		7691C6A520A91D0F006A0812 /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		76A64B0520B2195B0037C88A /* ImageLoaderPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderPresenter.swift; sourceTree = "<group>"; };
+		76A64B0720B21A830037C88A /* ImageLoaderService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderService.swift; sourceTree = "<group>"; };
+		76A64B0920B21B000037C88A /* ImageLoaderProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderProtocols.swift; sourceTree = "<group>"; };
 		76A67A6620A3DED7009E21C2 /* TenClosest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TenClosest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76A67A6920A3DED7009E21C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		76A67A6B20A3DED7009E21C2 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				7691C69D20A91AAB006A0812 /* LocationPresenter.swift */,
+				76A64B0520B2195B0037C88A /* ImageLoaderPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -84,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				7691C6A020A91C86006A0812 /* LocationProtocols.swift */,
+				76A64B0920B21B000037C88A /* ImageLoaderProtocols.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -93,6 +101,7 @@
 			children = (
 				7691C6A320A91CF4006A0812 /* LocationService.swift */,
 				7691C6A520A91D0F006A0812 /* LocationModel.swift */,
+				76A64B0720B21A830037C88A /* ImageLoaderService.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,11 +273,14 @@
 			files = (
 				7691C6A620A91D0F006A0812 /* LocationModel.swift in Sources */,
 				7685EEC020AED83F009D19ED /* DetailView.swift in Sources */,
+				76A64B0620B2195B0037C88A /* ImageLoaderPresenter.swift in Sources */,
 				7691C6A420A91CF4006A0812 /* LocationService.swift in Sources */,
 				7691C69C20A91A74006A0812 /* APIManager.swift in Sources */,
 				76A67A6C20A3DED7009E21C2 /* LocationViewController.swift in Sources */,
 				7691C69E20A91AAB006A0812 /* LocationPresenter.swift in Sources */,
+				76A64B0A20B21B000037C88A /* ImageLoaderProtocols.swift in Sources */,
 				76A67A6A20A3DED7009E21C2 /* AppDelegate.swift in Sources */,
+				76A64B0820B21A830037C88A /* ImageLoaderService.swift in Sources */,
 				7691C6A120A91C86006A0812 /* LocationProtocols.swift in Sources */,
 				76A67A9820A3FCBE009E21C2 /* Constants.swift in Sources */,
 			);

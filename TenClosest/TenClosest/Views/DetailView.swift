@@ -8,8 +8,8 @@
 
 import UIKit
 
-class DetailView: UIView {
-
+class DetailView: UIView, ImageLoaderViewProtocol {
+    
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var locationImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -17,6 +17,8 @@ class DetailView: UIView {
     @IBOutlet weak var openLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
+    private let presenter = ImageLoaderPresenter(service: ImageLoaderService())
     
     var open = false {
         didSet{
@@ -65,6 +67,10 @@ class DetailView: UIView {
                 if let rating = location.rating{
                     self.rating = rating
                 }
+                if let image = location.photos?.first{
+                    let imageModel = PhotoModel(width: Int(self.locationImage.frame.width), height: Int(self.locationImage.frame.height), photo_reference: image.photo_reference)
+                    presenter.fetchImage(photoModel: imageModel)
+                }
             }
         }
     }
@@ -86,9 +92,15 @@ class DetailView: UIView {
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         
+        presenter.attachView(self)
+        
         adressLabel.text = ""
         ratingLabel.text = ""
         openLabel.text = ""
         priceLabel.text = ""
+    }
+    
+    func showImage(_ image: UIImage) {
+        locationImage.image = image
     }
 }
